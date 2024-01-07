@@ -1,18 +1,19 @@
+
+
 import axios from 'axios';
 
-const API_KEY = 'cd200590eb630d47a27ed1fead2e617f';
-const API_URL = 'http://api.openweathermap.org/data/2.5/weather';
-
-export const getWeather = async (city, country) => {
+export const getWeather = async (city) => {
     try {
-        let response = await axios.get(`${API_URL}?q=${city},${country}&appid=${API_KEY}&units=metric`);
-        
+        // let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=895284fb2d2c50a520ea537456963d9c`);
+        let response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=cd200590eb630d47a27ed1fead2e617f`);
         return response.data;
+        
     } catch (error) {
-         
-       alert("😕😕 Enter a Correct City Name 😕😕")
-        // console.log('Error while calling the api ', error.message);
-        // return error.response;
+          
+       alert("😕❌🛑 Enter a Valid City Name 🛑❌😕")
+      
     }
 }
+
+
 
